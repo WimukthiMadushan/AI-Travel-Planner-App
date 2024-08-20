@@ -1,9 +1,12 @@
 import React from "react";
-import { Image, View, Text, TextInput, Button } from "react-native";
+import { Image, View, Text, TextInput, Button, Touchable } from "react-native";
 import { StyleSheet } from "react-native";
 import { Colors } from "@/constants/Colors";
+import { TouchableOpacity } from "react-native";
+import { useRouter } from "expo-router";
 
 function Login() {
+  const router = useRouter();
   return (
     <View>
       <Image
@@ -25,8 +28,8 @@ function Login() {
         </Text>
         <Text
           style={{
-            fontFamily: "outfit",
-            fontSize: 17,
+            fontFamily: "outfit-regular",
+            fontSize: 15,
             textAlign: "center",
             color: Colors.GRAY,
           }}
@@ -34,16 +37,19 @@ function Login() {
           Discover your next adventure effortlessly. Personalized itineraries at
           your fingertips. Travel smarter with Al-driven insights."
         </Text>
-        <View style={styles.button}>
+        <TouchableOpacity style={styles.button}>
           <Text
+            onPress={() => router.push("/auth/sign-in")}
             style={{
               color: Colors.WHITE,
               textAlign: "center",
+              fontFamily: "outfit-bold",
+              fontSize: 17,
             }}
           >
             Get Started
           </Text>
-        </View>
+        </TouchableOpacity>
       </View>
     </View>
   );
