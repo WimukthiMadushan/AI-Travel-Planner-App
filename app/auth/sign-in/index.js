@@ -1,21 +1,48 @@
 import { View, Text } from "react-native";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigation, useRouter } from "expo-router";
 import { Colors } from "./../../../constants/Colors";
 import { TextInput } from "react-native";
 import { StyleSheet } from "react-native";
 import { TouchableOpacity } from "react-native";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "./../../../Configs/FirebaseConfig";
+import { ToastAndroid } from "react-native";
 
 export default function SignIn() {
   const navigation = useNavigation();
   const router = useRouter();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
   useEffect(() => {
     navigation.setOptions({
       headerShown: false,
     });
   }, []);
+
+  const onSignIn = () => {
+    if (!(email.length > 0) || !(password.length > 0)) {
+      ToastAndroid.show("Please enter full details", ToastAndroid.SHORT);
+      return;
+    }
+
+    signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        router.replace("/mytrip");
+
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorMessage);
+      });
+  };
   return (
     <View
       style={{
@@ -66,7 +93,11 @@ export default function SignIn() {
         }}
       >
         <Text>Email</Text>
-        <TextInput style={styles.input} placeholder="Enter your email" />
+        <TextInput
+          style={styles.input}
+          placeholder="Enter your email"
+          onChangeText={(value) => setEmail(value)}
+        />
       </View>
       {/* password */}
       <View
@@ -80,10 +111,12 @@ export default function SignIn() {
           style={styles.input}
           placeholder="Enter Password"
           secureTextEntry={true}
+          onChangeText={(value) => setPassword(value)}
         />
       </View>
       {/* Sign in button */}
-      <View
+      <TouchableOpacity
+        onPress={onSignIn}
         style={{
           marginTop: 20,
           backgroundColor: Colors.PRIMARY,
@@ -103,7 +136,7 @@ export default function SignIn() {
         >
           Sign In
         </Text>
-      </View>
+      </TouchableOpacity>
       {/* create account button */}
       <TouchableOpacity
         onPress={() => router.replace("/auth/sign-up")}
