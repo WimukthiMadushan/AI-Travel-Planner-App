@@ -1,50 +1,65 @@
-# Welcome to your Expo app 👋
+# AI-Travel Planner
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
-## Get started
+AI-Travel Planner is a mobile application designed to help users plan their trips using AI-powered recommendations. Built with React Native, Expo, and Firebase Authentication, the app provides a seamless experience for users to create, manage, and share their travel itineraries.
 
-1. Install dependencies
+## Installation
 
+Follow these steps to set up the project locally:
+
+1. **Clone the Repository**:
    ```bash
-   npm install
-   ```
+   git clone https://github.com/WimukthiMadushan/AI-Travel-Planner-App.git
 
-2. Start the app
+## Screenshots
 
-   ```bash
-    npx expo start
-   ```
+## Here are some screenshots of the GUI:
 
-In the output, you'll find options to open the app in a
+<div style="display: flex; justify-content: space-between; align-items: center;">
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+  <div style="margin-right: 10px; text-align: center;">
+    <h4>First Page</h4>
+    <img src="Resources/First_Page.png" alt="First Page" style="width: 25%; max-width: 50px;"/>
+  </div>
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+  <div style="margin-right: 10px; text-align: center;">
+    <h4>Login Page</h4>
+    <img src="Resources/Sign_In.png" alt="Login Page" style="width: 25%; max-width: 150px;"/>
+  </div>
 
-## Get a fresh project
+  <div style="margin-right: 10px; text-align: center;">
+    <h4>Create Account</h4>
+    <img src="Resources/Create_Account.png" alt="Create Account" style="width: 25%; max-width: 150px;"/>
+  </div>
 
-When you're ready, run:
+  <div style="margin-right: 10px; text-align: center;">
+    <h4>Search Trip</h4>
+    <img src="Resources/Search_Page.png" alt="Search Trip" style="width: 25%; max-width: 150px;"/>
+  </div>
 
-```bash
-npm run reset-project
-```
+  <div style="text-align: center;">
+    <h4>My Trips</h4>
+    <img src="Resources/MyTrips.png" alt="My Trips" style="width: 25%; max-width: 150px;"/>
+  </div>
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+</div>
 
-## Learn more
 
-To learn more about developing your project with Expo, look at the following resources:
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
 
-## Join the community
+## Screenshots of Already Finished Pages
 
-Join our community of developers creating universal apps.
+<div style="display: flex; justify-content: space-between;">
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+  ### First Page
+  <img src="Resources/First_Page_UI.jpg" alt="First Page" style="width: 30%;"/>
+
+  ### Login Page
+  <img src="Resources/Login_UI.jpg" alt="Login Page" style="width: 30%;"/>
+
+  ### Create Account
+  <img src="Resources/Create_Account_UI.jpg" alt="Create Account" style="width: 30%;"/>
+
+</div>
+
+   
